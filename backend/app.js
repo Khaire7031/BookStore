@@ -7,8 +7,12 @@ require("./connection/conn.js")
 app.use(cors())
 app.use(express.json())
 
-app.use('/api/v1',bookRoute)
+app.use('/api/v1', bookRoute)
 
-app.listen(1000,()=>{
+app.get("/", (req, res) => {
+    res.send("Hello From Sanket Backend.")
+})
+
+app.listen(1000, () => {
     console.log('server started')
 })
